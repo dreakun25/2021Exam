@@ -1,17 +1,11 @@
 <template>
   <div>
-    <MainNavbar :colorOnScroll="400" />
-    <router-view />
+    <div :class="{ 'nav-open': NavbarStore.showNavbar }">
+      <router-view name="header" />
+      <div>
+        <router-view />
+      </div>
+      <router-view name="footer" />
+    </div>
   </div>
 </template>
-
-<script>
-import MainNavbar from "./layout/MainNavbar.vue";
-
-export default {
-  name: "App",
-  components: {
-    MainNavbar
-  }
-};
-</script>
