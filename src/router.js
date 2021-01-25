@@ -15,7 +15,7 @@ export default new Router({
       components: { default: Landing, header: MainNavbar, footer: MainFooter },
       props: {
         header: { colorOnScroll: 400 },
-        footer: { backgroundColor: "black" }
+        footer: { backgroundColor: "white" }
       }
     },
     {
