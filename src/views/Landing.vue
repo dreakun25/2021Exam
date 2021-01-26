@@ -62,7 +62,7 @@
                   </div>
                   <h4 class="info-title">Curently Closed</h4>
                   <p>
-                    Due to mesures against COVID-19 the museum is curently closed.
+                    Due to mesures against COVID-19 the museum is currently closed.
                   </p>
                 </div>
               </div>
