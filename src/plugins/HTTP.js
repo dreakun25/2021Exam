@@ -8,7 +8,7 @@ instance.interceptors.request.use(config => {
 });
 
 instance.interceptors.response.use(response => {
-  nprogress.stop();
+  nprogress.done();
   return response;
 });
 
