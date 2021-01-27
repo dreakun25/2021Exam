@@ -17,8 +17,8 @@
         <div class="md-layout-item" v-for="exhb in exh.slice((i - 1) * 2, i * 2)" :key="exhb.title">
           <md-card>
             <md-card-media-cover md-text-scrim>
-              <md-card-media md-ratio="16:9">
-                <img :src="exhb.image_url" alt="Exhibition sample image" />
+              <md-card-media md-ratio="16:9" class="rounded">
+                <img v-lazy="exhb.image_url" alt="Exhibition sample image" />
               </md-card-media>
 
               <md-card-area>
@@ -55,7 +55,15 @@ export default {
   data() {
     return {
       exh: [],
+      check: null,
     };
+  },
+  methods: {
+    checkObject() {
+      if (typeof covertStyle.background === 'object' && covertStyle.background !== null) {
+        this.check = true;
+      }
+    },
   },
   created() {
     instance
@@ -77,4 +85,8 @@ export default {
 };
 </script>
 
-<style lang="css" scoped></style>
+<style lang="css" scoped>
+.rounded {
+  border-radius: 50px;
+}
+</style>

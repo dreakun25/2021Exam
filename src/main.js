@@ -15,12 +15,21 @@
 import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
-
+import lazyload from "vue-lazyload";
 import MaterialKit from "./plugins/material-kit";
+
+const loading = "https://media.giphy.com/media/jAYUbVXgESSti/giphy.gif";
+const errorLoading = "https://www.techpowerup.com/img/r1eQF5N0FcRVaef6.jpg";
 
 Vue.config.productionTip = false;
 
 Vue.use(MaterialKit);
+Vue.use(lazyload, {
+  preLoad: 1.3,
+  error: errorLoading,
+  loading: loading,
+  attempt: 1
+});
 
 const NavbarStore = {
   showNavbar: false
