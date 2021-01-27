@@ -13,7 +13,27 @@
       </div>
     </parallax>
     <div class="text-center" v-for="i in Math.ceil(exh.length / 2)" :key="i">
-      <div class="md-layout">
+      <div class="md-layout" v-if="loading === true">
+        <div class="md-layout-item">
+          <md-card>
+            <md-card-media-cover>
+              <md-card-media md-ratio="16:9" class="rounded">
+                <img src="https://media.giphy.com/media/jAYUbVXgESSti/giphy.gif" alt="loading" />
+              </md-card-media>
+            </md-card-media-cover>
+          </md-card>
+        </div>
+        <div class="md-layout-item">
+          <md-card>
+            <md-card-media-cover>
+              <md-card-media md-ratio="16:9" class="rounded">
+                <img src="https://media.giphy.com/media/jAYUbVXgESSti/giphy.gif" alt="loading" />
+              </md-card-media>
+            </md-card-media-cover>
+          </md-card>
+        </div>
+      </div>
+      <div class="md-layout" v-if="loading === false">
         <div class="md-layout-item" v-for="exhb in exh.slice((i - 1) * 2, i * 2)" :key="exhb.title">
           <md-card>
             <md-card-media-cover md-text-scrim>
@@ -56,6 +76,7 @@ export default {
     return {
       exh: [],
       check: null,
+      loading: true,
     };
   },
   methods: {
@@ -81,6 +102,9 @@ export default {
         backgroundImage: `url(${this.header})`,
       };
     },
+  },
+  mounted() {
+    setTimeout((this.loading = false), 2000);
   },
 };
 </script>
