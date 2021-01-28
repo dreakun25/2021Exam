@@ -58,7 +58,7 @@
               <md-card>
                 <md-card-media-cover>
                   <md-card-media>
-                    <img src="..\assets\img\Logo.png" alt="Logo" />
+                    <img src="@/assets/img/Logo.png" alt="Logo" />
                   </md-card-media>
                   <md-card-area>
                     <md-card-header>
