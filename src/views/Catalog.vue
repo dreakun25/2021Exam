@@ -109,8 +109,8 @@ export default {
           exhb.artwork_ids.length > 10,
       );
       setTimeout((this.isLoading = res.doneLoading), 2000);
-      console.log(res.doneLoading);
-      console.log(this.isLoading);
+      // console.log(res.doneLoading);
+      // console.log(this.isLoading);
     });
   },
 };
