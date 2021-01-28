@@ -9,10 +9,10 @@
     <div class="md-toolbar-row md-collapse-lateral">
       <div class="md-toolbar-section-start">
         <router-link to="/" class="md-title">
-          <h3>
+          <h4>
             <md-avatar class="md-large"> <img src="@/assets/img/Logo.png" alt="logo" /> </md-avatar>
             Art Institute of Chicago
-          </h3>
+          </h4>
         </router-link>
       </div>
       <div class="md-toolbar-section-end">
