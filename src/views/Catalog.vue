@@ -12,19 +12,30 @@
         </div>
       </div>
     </parallax>
-    <div class="text-center" v-if="this.isLoading === true">
-      <div class="md-layout">
-        <md-card>
-          <md-card-media-cover>
-            <md-card-media md-ratio="16:9" class="rounded">
-              <img v-lazy="this.gif" alt="Loading" />
-            </md-card-media>
-          </md-card-media-cover>
-        </md-card>
+    <div class="main main-raised text-center">
+      <div class="text-center" v-if="this.isLoading === true">
+        <div class="md-layout">
+          <div class="md-layout-item">
+            <md-card>
+              <md-card-media-cover>
+                <md-card-media md-ratio="16:9" class="rounded">
+                  <img v-lazy="this.gif" alt="Loading" />
+                </md-card-media>
+              </md-card-media-cover>
+            </md-card>
+          </div>
+          <div class="md-layout-item">
+            <md-card>
+              <md-card-media-cover>
+                <md-card-media md-ratio="16:9" class="rounded">
+                  <img v-lazy="this.gif" alt="Loading" />
+                </md-card-media>
+              </md-card-media-cover>
+            </md-card>
+          </div>
+        </div>
       </div>
-    </div>
-    <div v-else>
-      <div class="text-center">
+      <div v-else>
         <div class="text-center" v-for="i in Math.ceil(exh.length / 2)" :key="i">
           <div class="md-layout">
             <div
@@ -32,7 +43,7 @@
               v-for="exhb in exh.slice((i - 1) * 2, i * 2)"
               :key="exhb.title"
             >
-              <md-card>
+              <md-card md-with-hover>
                 <md-card-media-cover md-text-scrim>
                   <md-card-media md-ratio="16:9" class="rounded">
                     <img v-lazy="exhb.image_url" alt="Exhibition sample image" />
@@ -40,16 +51,13 @@
 
                   <md-card-area>
                     <md-card-header>
-                      <span class="md-title">{{ exhb.title }}</span>
-                      <span class="md-subhead" v-if="exhb.short_description">{{
-                        exhb.short_description
-                      }}</span>
+                      <span class="title">{{ exhb.title }}</span>
+                      <md-card-content>
+                        <span class="md-subhead" v-if="exhb.short_description">{{
+                          exhb.short_description
+                        }}</span>
+                      </md-card-content>
                     </md-card-header>
-
-                    <md-card-actions>
-                      <md-button>Action</md-button>
-                      <md-button>Action</md-button>
-                    </md-card-actions>
                   </md-card-area>
                 </md-card-media-cover>
               </md-card>
@@ -57,12 +65,12 @@
             <div class="md-layout-item" v-if="i === 7">
               <md-card>
                 <md-card-media-cover>
-                  <md-card-media>
+                  <md-card-media md-ratio="16:9">
                     <img src="@/assets/img/Logo.png" alt="Logo" />
                   </md-card-media>
                   <md-card-area>
-                    <md-card-header>
-                      <span class="md-title">To view more</span>
+                    <md-card-header style="color:black">
+                      <span class="title" style="color:black">To view more</span>
                       <span class="md-subhead">Visit the main website</span>
                     </md-card-header>
                   </md-card-area>
@@ -119,5 +127,13 @@ export default {
 <style lang="css" scoped>
 .rounded {
   border-radius: 50px;
+}
+.md-layout {
+  width: 95%;
+  margin-left: 15px !important;
+}
+.md-card-header {
+  background-color: transparent !important;
+  box-shadow: none !important;
 }
 </style>

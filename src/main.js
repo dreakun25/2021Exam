@@ -16,6 +16,7 @@ import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
 import lazyload from "vue-lazyload";
+
 import MaterialKit from "./plugins/material-kit";
 
 const loading = "https://media.giphy.com/media/jAYUbVXgESSti/giphy.gif";
