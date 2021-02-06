@@ -5,6 +5,7 @@ package-lock.json
 /docs
 README.md
 LICENSE.md
+*.rar
 # local env files
 .env.local
 .env.*.local

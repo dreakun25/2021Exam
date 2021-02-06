@@ -3,10 +3,13 @@
     <parallax class="section page-header header-filter" :style="headerStyle">
       <div class="container">
         <div class="md-layout">
-          <div class="md-layout-item md-size-50 md-small-size-70 md-xsmall-size-100">
+          <div
+            class="md-layout-item md-size-50 md-small-size-70 md-xsmall-size-100"
+          >
             <h1 class="title">Exhibitions Demo</h1>
             <h4>
-              This is is a small demo of the exhibitions that the museum provides for viewing.
+              This is is a small demo of the exhibitions that the museum
+              provides for viewing.
             </h4>
           </div>
         </div>
@@ -36,26 +39,36 @@
         </div>
       </div>
       <div v-else>
-        <div class="text-center" v-for="i in Math.ceil(exh.length / 2)" :key="i">
+        <div
+          class="text-center"
+          v-for="i in Math.ceil(exh.length / 2)"
+          :key="i"
+        >
           <div class="md-layout">
             <div
               class="md-layout-item"
               v-for="exhb in exh.slice((i - 1) * 2, i * 2)"
               :key="exhb.title"
+              @click="viewExhb(exhb.id)"
             >
               <md-card md-with-hover>
                 <md-card-media-cover md-text-scrim>
                   <md-card-media md-ratio="16:9" class="rounded">
-                    <img v-lazy="exhb.image_url" alt="Exhibition sample image" />
+                    <img
+                      v-lazy="exhb.image_url"
+                      alt="Exhibition sample image"
+                    />
                   </md-card-media>
 
                   <md-card-area>
                     <md-card-header>
                       <span class="title">{{ exhb.title }}</span>
                       <md-card-content>
-                        <span class="md-subhead" v-if="exhb.short_description">{{
-                          exhb.short_description
-                        }}</span>
+                        <span
+                          class="md-subhead"
+                          v-if="exhb.short_description"
+                          >{{ exhb.short_description }}</span
+                        >
                       </md-card-content>
                     </md-card-header>
                   </md-card-area>
@@ -70,7 +83,9 @@
                   </md-card-media>
                   <md-card-area>
                     <md-card-header style="color:black">
-                      <span class="title" style="color:black">To view more</span>
+                      <span class="title" style="color:black"
+                        >To view more</span
+                      >
                       <span class="md-subhead">Visit the main website</span>
                     </md-card-header>
                   </md-card-area>
@@ -85,42 +100,45 @@
 </template>
 
 <script>
-import instance from '@/plugins/HTTP.js';
+import instance from "@/plugins/HTTP.js";
 export default {
   props: {
     header: {
       type: String,
-      default: require('@/assets/img/interior.jpg'),
-    },
+      default: require("@/assets/img/interior.jpg")
+    }
   },
-  name: 'Catalog',
+  name: "Catalog",
   data() {
     return {
       exh: [],
       isLoading: true,
-      gif: 'https://media.giphy.com/media/jAYUbVXgESSti/giphy.gif',
+      gif: "https://media.giphy.com/media/jAYUbVXgESSti/giphy.gif"
     };
   },
   computed: {
     headerStyle() {
       return {
-        backgroundImage: `url(${this.header})`,
+        backgroundImage: `url(${this.header})`
       };
-    },
+    }
   },
   mounted() {
-    instance.get('exhibitions?limit=100').then((res) => {
+    instance.get("exhibitions?limit=100").then(res => {
       this.exh = res.data.data.filter(
-        (exhb) =>
+        exhb =>
           exhb.image_url !== null &&
           exhb.short_description !== null &&
-          exhb.artwork_ids.length > 10,
+          exhb.artwork_ids.length > 10
       );
       setTimeout((this.isLoading = res.doneLoading), 2000);
-      // console.log(res.doneLoading);
-      // console.log(this.isLoading);
     });
   },
+  methods: {
+    viewExhb(id) {
+      this.$router.push("/exhibition/" + id);
+    }
+  }
 };
 </script>
 

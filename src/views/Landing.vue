@@ -14,7 +14,7 @@
               href="https://www.artic.edu/visit-us-virtually"
               class="md-success md-lg"
               target="_blank"
-              ><i class="fas fa-eye"></i> Vitrtual visit</md-button
+              ><i class="fas fa-eye"></i> Vitrtual visit on the main site</md-button
             >
           </div>
         </div>
@@ -151,13 +151,14 @@
                 <div class="md-layout-item">
                   <md-field>
                     <label>Your Email</label>
-                    <md-input v-model="email" type="email"></md-input>
+                    <md-tooltip md-direction="top">Please visit the main website</md-tooltip>
+                    <md-input disabled v-model="email" type="email"></md-input>
                   </md-field>
                 </div>
               </div>
               <div class="md-layout">
                 <div class="md-layout-item md-size-33 mx-auto text-center">
-                  <md-button class="md-success">Subscribe</md-button>
+                  <md-button disabled class="md-success">Subscribe </md-button>
                 </div>
               </div>
             </form>
