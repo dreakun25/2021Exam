@@ -71,8 +71,8 @@
                   </md-card-media>
                   <md-card-area>
                     <md-card-header style="color:black">
-                      <span class="title" style="color:black">To view more</span>
-                      <span class="md-subhead">Visit the main website</span>
+                      <span class="title" style="color:black"><b>To view more</b></span>
+                      <span class="md-subhead"><b>Visit the main website</b></span>
                     </md-card-header>
                   </md-card-area>
                 </md-card-media-cover>
