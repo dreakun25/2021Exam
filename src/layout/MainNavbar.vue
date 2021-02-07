@@ -37,7 +37,7 @@
                 <p>Main Website</p>
               </md-list-item>
 
-              <md-list-item to="catalog">
+              <md-list-item to="/catalog">
                 <svg-icon type="mdi" :path="icons[1]" />
                 <p>Exhibitions Demo</p>
               </md-list-item>
