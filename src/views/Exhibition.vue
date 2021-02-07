@@ -28,6 +28,7 @@
                 :mouse-drag="true"
                 adjustableHeight
                 navigationEnabled
+                :paginationEnabled="false"
                 navigationNextLabel="<i class='material-icons'>keyboard_arrow_right</i>"
                 navigationPrevLabel="<i class='material-icons'>keyboard_arrow_left</i>"
                 @page-change="activeSlide"
