@@ -6,8 +6,10 @@
           <div class="md-layout-item md-size-50 md-small-size-70 md-xsmall-size-100">
             <h1 class="title">Art Institute of Chicago</h1>
             <h4>
-              Located in downtown Chicago, the Art Institute is one of the world’s great art
-              museums, housing a collection that spans centuries and the globe.
+              <b>
+                Located in downtown Chicago, the Art Institute is one of the world’s great art
+                museums, housing a collection that spans centuries and the globe.
+              </b>
             </h4>
             <br />
             <md-button
@@ -16,6 +18,22 @@
               target="_blank"
               ><i class="fas fa-eye"></i> Vitrtual visit on the main site</md-button
             >
+          </div>
+          <div class="md-layout-item md-size-50 md-small-size-30 md-xsmall-size-100">
+            <div
+              style="text-decoration:none; overflow:hidden;max-width:100%;width:400px;height:300px;"
+            >
+              <div id="googlemaps-display" style="height:100%; width:100%;max-width:100%;">
+                <iframe
+                  style="height:100%;width:100%;border:0;"
+                  frameborder="0"
+                  src="https://www.google.com/maps/embed/v1/place?q=art+institute+of+chicago&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"
+                ></iframe>
+              </div>
+              <a class="embedmap-code" href="https://www.embed-map.com" id="authorizemaps-data"
+                >https://www.embed-map.com</a
+              >
+            </div>
           </div>
         </div>
       </div>
@@ -215,5 +233,12 @@ export default {
 
 .md-has-textarea + .md-layout {
   margin-top: 15px;
+}
+#googlemaps-display img.text-marker {
+  max-width: none !important;
+  background: none !important;
+}
+img {
+  max-width: none;
 }
 </style>
